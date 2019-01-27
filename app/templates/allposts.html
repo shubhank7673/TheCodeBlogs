@@ -1,0 +1,81 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block body %}
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('{% static 'img/allposts2.jpg'  %}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Articles</h1>
+              <span class="subheading">Scroll Down to see Articles</span>
+                <pre>
+
+
+
+                </pre>
+            </div>
+          </div>
+          <p><a href="#scroll" class="scroll"><section id="section03" class="demo">
+                <a href="#scroll"><span></span><span></span><span></span></a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div id="scroll">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          {% for post in all_posts %}
+              <div class="post-preview">
+                <a href="/post/{{ post.pk }}/">
+                  <h2 class="post-title">
+                    {{ post.title }}
+                  </h2>
+                  <h3 class="post-subtitle">
+                    {{ post.sub_heading }}
+                  </h3>
+                </a>
+                <p class="post-meta">Posted by
+                  <a href="https://www.facebook.com/shubhank.khare.3">Admin</a>
+                  on {{ post.date }}</p>
+              </div>
+              <hr>
+          {% endfor %}<!--
+            <div class="pagination">
+    <span class="step-links">
+        {% if all_posts.has_previous %}
+            <a href="?pageno=1">&laquo; first</a>
+            <a href="?pageno={{ all_posts.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ all_posts.number }} of {{ all_posts.paginator.num_pages }}.
+        </span>
+
+        {% if all_posts.has_next %}
+            <a href="?pageno={{ all_posts.next_page_number }}">next</a>
+            <a href="?pageno={{ all_posts.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>-->
+          <!-- Pager -->
+          <div class="clearfix">
+              {% if all_posts.has_next %}
+            <a class="btn btn-primary float-right" href="?pageno={{ all_posts.next_page_number }}">Older Posts &rarr;</a>
+              {% endif %}
+
+              {% if all_posts.has_previous %}
+              <a class="btn btn-primary float-left" href="?pageno={{ all_posts.previous_page_number }}">newer Posts &larr;</a>
+              {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+{% endblock %}
