@@ -6,9 +6,9 @@ Visit http://thecodeblog.pythonanywhere.com/ .
 
 ## Extra features:
   ```
-  - Like article using your facebook account
-  - Comment on article using your facebook account
-  - Share article using facebook account
+  - Like articles using your facebook account
+  - Comment on articles using your facebook account
+  - Share articles using facebook account
   
   ```
 ## Requirements:
