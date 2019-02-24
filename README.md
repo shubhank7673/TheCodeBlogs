@@ -4,7 +4,7 @@ for backend and bootstrap for front-end.
 
 Visit http://thecodeblog.pythonanywhere.com/ .
 
-## Extra features:
+## Additional features:
   ```
   - Like articles using your facebook account
   - Comment on articles using your facebook account
